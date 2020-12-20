@@ -1,4 +1,4 @@
-# Tolist Frontend [![Build Status](https://travis-ci.org/BunColak/tolist-frontend.svg?branch=master)](https://travis-ci.org/BunColak/tolist-frontend)
+# Tolist Frontend 
 
 ## Project setup
 ```
