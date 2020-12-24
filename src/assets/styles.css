@@ -9,11 +9,14 @@ body,
 }
 
 #app {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .button {
   @apply uppercase text-xl text-center font-bold bg-indigo-700 text-white px-4 py-2 mt-6 mx-auto rounded-xl hover:shadow;
+}
+
+.link {
+  @apply font-bold text-indigo-700 cursor-pointer border-b-2 border-transparent transition hover:text-indigo-900 hover:border-indigo-900;
 }

@@ -13,16 +13,17 @@
 import TodoLists from '../components/TodoLists.vue'
 import TodoList from '../components/TodoList.vue'
 export default {
-  name: 'Home',
+  name: 'Todos',
   components: { TodoLists, TodoList },
   data () {
     return {
-      selectedList: null
+      selectedList: this.$route.params.id ? Number(this.$route.params.id) : null
     }
   },
   methods: {
     selectList (id) {
       this.selectedList = id
+      this.$router.replace(`/${id}`)
     }
   }
 }

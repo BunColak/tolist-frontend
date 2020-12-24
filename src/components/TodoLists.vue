@@ -1,6 +1,6 @@
 <template>
-  <aside class="flex flex-col bg-gray-800 text-white p-4 w-1/6">
-    Todo Lists
+  <aside class="flex flex-col bg-gray-800 text-white p-4 w-1/6 flex-shrink-0">
+    <h4 class="ml-4 mt-4 font-bold text-lg">Todo Lists</h4>
     <div
       class="p-4 cursor-pointer hover:underline"
       v-for="list in myTodoLists"
@@ -19,12 +19,7 @@ export default {
   name: 'TodoLists',
   apollo: {
     myTodoLists: {
-      query: MyTodoLists,
-      result () {
-        if (this.myTodoLists.length > 0) {
-          this.selectList(this.myTodoLists[1].id)
-        }
-      }
+      query: MyTodoLists
     }
   },
   methods: {

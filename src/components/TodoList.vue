@@ -1,6 +1,13 @@
 <template>
-  <div v-if="todoList" class="p-8">
-    <h3 class="text-3xl font-bold">{{ todoList.title }}</h3>
+  <div v-if="todoList" class="p-8 w-full">
+    <div class="flex items-baseline">
+      <h3 class="text-3xl font-bold">{{ todoList.title }}</h3>
+      <p class="ml-4 text-sm text-gray-600">
+        from
+        <a class="link">{{ todoList.template.title }} </a>by
+        <a class="link">{{ todoList.template.user.username }}</a>
+      </p>
+    </div>
     <div class="mt-8">
       <todo-item
         data-testId="todo"
@@ -33,15 +40,15 @@ export default {
   components: {
     TodoItem
   },
-  props: {
-    id: Number
-  },
+  // props: {
+  //   id: Number
+  // },
   apollo: {
     todoList: {
       query: TodoListQuery,
       variables () {
         return {
-          id: this.id
+          id: Number(this.$route.params.id)
         }
       }
     }
