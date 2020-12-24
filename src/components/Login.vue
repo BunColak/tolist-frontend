@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="fixed w-full h-full bg-gray-800 top-0 left-0 opacity-70"></div>
+    <div class="fixed w-full h-full bg-gray-800 top-0 left-0 opacity-70" @click="closeModal"></div>
     <div
       class="fixed lg:w-1/2 lg:h-2/3 p-8 bg-white text-black opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded"
     >
@@ -78,6 +78,9 @@ export default {
         }
       }
       return null
+    },
+    closeModal () {
+      this.$emit('close')
     }
   }
 }

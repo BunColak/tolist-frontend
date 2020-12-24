@@ -23,7 +23,7 @@
         <button id="register" class="mx-4 border-2 px-2 py-1 rounded">Signup</button>
       </div>
     </div>
-    <login v-show="showLogin && !this.$root.isLoggedIn" />
+    <login v-show="showLogin && !this.$root.isLoggedIn" @close="onHideLogin" />
   </nav>
 </template>
 
@@ -43,6 +43,9 @@ export default {
   methods: {
     onLoginClick () {
       this.showLogin = true
+    },
+    onHideLogin () {
+      this.showLogin = false
     }
   }
 }
