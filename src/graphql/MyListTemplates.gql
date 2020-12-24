@@ -1,0 +1,6 @@
+query MyListTemplates {
+  myListTemplates {
+    id
+    title
+  }
+}

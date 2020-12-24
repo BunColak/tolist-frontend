@@ -1,10 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Todos from '../views/Todos.vue'
+import Templates from '../views/Templates.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/templates',
+    name: 'Templates',
+    component: Templates
+  },
+  {
+    path: '/templates/:id',
+    name: 'Template',
+    component: Templates
+  },
   {
     path: '/',
     name: 'Todos',

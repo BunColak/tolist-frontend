@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyTemplatesList should render properly 1`] = `
+<div class="sidebar">
+  <h3 class="font-lg font-bold">My Templates</h3>
+  <div class="mt-4 flex flex-col"><a class="my-4">Title 1</a><a class="my-4">Title 2</a><a class="my-4">Title 3</a></div>
+</div>
+`;

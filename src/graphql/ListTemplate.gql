@@ -1,0 +1,14 @@
+query Template($id: Float!) {
+  listTemplate(id: $id) {
+    id
+    title
+    todos {
+      id
+      text
+    }
+    user {
+      id
+      username
+    }
+  }
+}

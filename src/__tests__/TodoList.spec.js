@@ -1,7 +1,10 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils'
 import TodoList from '@/components/TodoList'
+import VueRouter from 'vue-router'
 
 const localVue = createLocalVue()
+const router = new VueRouter()
+localVue.use(VueRouter)
 
 const mockTodoList = {
   id: 1,
@@ -22,35 +25,39 @@ const mockTodoList = {
       text: 'test 3',
       completed: true
     }
-  ]
+  ],
+  template: {
+    id: 1,
+    title: 'Test Title',
+    user: {
+      id: 1,
+      username: 'TestUsername'
+    }
+  }
 }
 
 describe('TodoList', () => {
-  it('should render without problems', () => {
-    const wrapper = shallowMount(TodoList, {
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = shallowMount(TodoList, {
       propsData: { id: mockTodoList.id },
       data () {
         return {
           todoList: mockTodoList
         }
       },
-      localVue
+      localVue,
+      router,
+      stubs: { RouterLink: RouterLinkStub }
     })
+  })
 
+  it('should render without problems', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should group todos properly', () => {
-    const wrapper = shallowMount(TodoList, {
-      propsData: { id: mockTodoList.id },
-      data () {
-        return {
-          todoList: mockTodoList
-        }
-      },
-      localVue
-    })
-
     expect(wrapper.findAll('[data-testId = todo]').length).toBe(2)
     expect(wrapper.findAll('[data-testId = completed-todo]').length).toBe(1)
   })

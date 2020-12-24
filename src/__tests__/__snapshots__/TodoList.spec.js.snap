@@ -1,8 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TodoList should render without problems 1`] = `
-<div class="p-8">
-  <h3 class="text-3xl font-bold">Test Title</h3>
+<div class="p-8 w-full" id="1">
+  <div class="flex items-baseline">
+    <h3 class="text-3xl font-bold">Test Title</h3>
+    <p class="ml-4 text-sm text-gray-600">
+      from
+      <a class="link">Test Title </a>by
+      <a class="link">TestUsername</a>
+    </p>
+  </div>
   <div class="mt-8">
     <todo-item-stub todo="[object Object]" data-testid="todo"></todo-item-stub>
     <todo-item-stub todo="[object Object]" data-testid="todo"></todo-item-stub>

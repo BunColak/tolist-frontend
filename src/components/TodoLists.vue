@@ -1,13 +1,16 @@
 <template>
-  <aside class="flex flex-col bg-gray-800 text-white p-4 w-1/6 flex-shrink-0">
-    <h4 class="ml-4 mt-4 font-bold text-lg">Todo Lists</h4>
-    <div
-      class="p-4 cursor-pointer hover:underline"
-      v-for="list in myTodoLists"
-      :key="list.id"
-      @click="selectList(list.id)"
-    >
-      {{ list.title }}
+  <aside class="sidebar">
+    <h4 class="font-bold text-lg">Todo Lists</h4>
+    <div class="flex flex-col mt-4">
+      <router-link
+        class="py-4 cursor-pointer hover:underline"
+        v-for="list in myTodoLists"
+        :key="list.id"
+        :to="`/${list.id}`"
+        active-class="font-bold"
+      >
+        {{ list.title }}
+      </router-link>
     </div>
   </aside>
 </template>
@@ -20,11 +23,6 @@ export default {
   apollo: {
     myTodoLists: {
       query: MyTodoLists
-    }
-  },
-  methods: {
-    selectList (id) {
-      this.$emit('selectList', id)
     }
   }
 }

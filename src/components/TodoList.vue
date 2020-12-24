@@ -4,8 +4,12 @@
       <h3 class="text-3xl font-bold">{{ todoList.title }}</h3>
       <p class="ml-4 text-sm text-gray-600">
         from
-        <a class="link">{{ todoList.template.title }} </a>by
-        <a class="link">{{ todoList.template.user.username }}</a>
+        <router-link class="link" :to="`/templates/${todoList.template.id}`"
+          >{{ todoList.template.title }} </router-link
+        >by
+        <router-link class="link" :to="`/user/${todoList.template.user.id}`">{{
+          todoList.template.user.username
+        }}</router-link>
       </p>
     </div>
     <div class="mt-8">
@@ -40,9 +44,6 @@ export default {
   components: {
     TodoItem
   },
-  // props: {
-  //   id: Number
-  // },
   apollo: {
     todoList: {
       query: TodoListQuery,
@@ -69,6 +70,9 @@ export default {
           .sort((a, b) => a.id - b.id)
       }
       return []
+    },
+    listId () {
+      return this.$route.params.id
     }
   },
   methods: {
@@ -82,6 +86,11 @@ export default {
       } catch (e) {
         console.log(e)
       }
+    }
+  },
+  watch: {
+    listId () {
+      this.$apollo.queries.todoList.refetch()
     }
   }
 }
