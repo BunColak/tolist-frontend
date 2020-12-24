@@ -2,9 +2,9 @@
   <div>
     <div class="fixed w-full h-full bg-gray-800 top-0 left-0 opacity-70"></div>
     <div
-      class="fixed w-1/2 h-2/3 p-8 bg-white text-black opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded"
+      class="fixed lg:w-1/2 lg:h-2/3 p-8 bg-white text-black opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded"
     >
-      <form class="w-2/5 mx-auto" @submit.prevent="onLoginSubmit">
+      <form class="lg:w-2/5 mx-auto" @submit.prevent="onLoginSubmit">
         <h3 class="text-4xl text-center">Log In</h3>
         <ul class="mt-8 ml-4 text-red-700 list-disc" v-if="errorsMessages">
           <li v-for="error in errorsMessages" :key="error">{{ error }}</li>
