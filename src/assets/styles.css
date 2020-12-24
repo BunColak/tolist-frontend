@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button {
+    @apply uppercase text-xl text-center font-bold bg-indigo-700 text-white px-4 py-2 mt-6 mx-auto rounded-xl hover:shadow;
+}

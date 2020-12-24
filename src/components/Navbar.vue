@@ -18,16 +18,32 @@
           >
         </div>
       </div>
-      <div>
-        <button class="mx-4">Login</button>
-        <button class="mx-4 border-2 px-2 py-1 rounded">Signup</button>
+      <div id="login-buttons" v-if="!this.$root.isLoggedIn">
+        <button id="login" class="mx-4" @click="onLoginClick">Login</button>
+        <button id="register" class="mx-4 border-2 px-2 py-1 rounded">Signup</button>
       </div>
     </div>
+    <login v-show="showLogin && !this.$root.isLoggedIn" />
   </nav>
 </template>
 
 <script>
+import Login from './Login'
+
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  components: {
+    Login
+  },
+  data () {
+    return {
+      showLogin: false
+    }
+  },
+  methods: {
+    onLoginClick () {
+      this.showLogin = true
+    }
+  }
 }
 </script>
