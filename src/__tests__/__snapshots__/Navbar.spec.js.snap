@@ -2,11 +2,13 @@
 
 exports[`Navbar should render without problems 1`] = `
 <nav class="p-4 bg-indigo-700 text-white">
-  <div class="container mx-auto flex justify-between items-center">
+  <div class="mx-auto flex justify-between items-center">
     <div class="flex"><a class="font-semibold text-lg">ToList</a>
       <div><a class="text-lg ml-8">Features</a> <a class="text-lg ml-4">Templates</a></div>
     </div>
-    <div id="login-buttons"><button id="login" class="mx-4">Login</button> <button id="register" class="mx-4 border-2 px-2 py-1 rounded">Signup</button></div>
+    <div id="login-buttons"><button id="login" class="mx-4">Login</button> <button id="register" class="mx-4 border-2 px-2 py-1 rounded">
+        Signup
+      </button></div>
   </div>
   <login-stub style="display: none;"></login-stub>
 </nav>

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .button {
-    @apply uppercase text-xl text-center font-bold bg-indigo-700 text-white px-4 py-2 mt-6 mx-auto rounded-xl hover:shadow;
+  @apply uppercase text-xl text-center font-bold bg-indigo-700 text-white px-4 py-2 mt-6 mx-auto rounded-xl hover:shadow;
 }

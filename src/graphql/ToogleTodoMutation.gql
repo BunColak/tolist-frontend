@@ -1,0 +1,6 @@
+mutation ToggleTodo($id: Float!) {
+  toggleTodo(id: $id) {
+    id
+    completed
+  }
+}

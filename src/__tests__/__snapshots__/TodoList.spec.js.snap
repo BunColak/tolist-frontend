@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList should render without problems 1`] = `
+<div class="p-8">
+  <h3 class="text-3xl font-bold">Test Title</h3>
+  <div class="mt-8">
+    <todo-item-stub todo="[object Object]" data-testid="todo"></todo-item-stub>
+    <todo-item-stub todo="[object Object]" data-testid="todo"></todo-item-stub>
+  </div>
+  <div class="mt-8">
+    <h4 class="text-xl font-bold">Completed</h4>
+    <todo-item-stub todo="[object Object]" data-testid="completed-todo"></todo-item-stub>
+  </div>
+</div>
+`;

@@ -1,0 +1,11 @@
+query TodoList($id: Float!) {
+  todoList(id: $id) {
+    id
+    title
+    todos {
+      id
+      text
+      completed
+    }
+  }
+}

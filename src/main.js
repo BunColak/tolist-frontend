@@ -14,7 +14,7 @@ new Vue({
   },
   computed: {
     isLoggedIn () {
-      return this.token
+      return !!this.token
     }
   },
   render: h => h(App)

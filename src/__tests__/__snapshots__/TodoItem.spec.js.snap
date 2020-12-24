@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem should render without problems 1`] = `
+<div><label class=""><input type="checkbox">
+    Test Text
+  </label></div>
+`;
